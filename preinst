@@ -21,5 +21,5 @@ if [ ! -d "$XWIKI_CONF_DIR" ]; then
     mkdir -p $XWIKI_CONF_DIR
 fi
 
-curl -fSLs https://raw.githubusercontent.com/xwiki-contrib/docker-xwiki/master/12/mysql-tomcat/mysql/xwiki.cnf -o "$XWIKI_CONF_DIR"/xwiki.cnf
-curl -fSLs https://raw.githubusercontent.com/xwiki-contrib/docker-xwiki/master/12/mysql-tomcat/mysql/init.sql -o "$XWIKI_CONF_DIR"/init.sql
+curl -fSLs https://raw.githubusercontent.com/xwiki-contrib/docker-xwiki/5384037f6f8cee294b1d40e3affaaefcb0f218dc/13/mysql-tomcat/mysql/xwiki.cnf -o "$XWIKI_CONF_DIR"/xwiki.cnf
+curl -fSLs https://raw.githubusercontent.com/xwiki-contrib/docker-xwiki/5384037f6f8cee294b1d40e3affaaefcb0f218dc/13/mysql-tomcat/mysql/init.sql -o "$XWIKI_CONF_DIR"/init.sql
