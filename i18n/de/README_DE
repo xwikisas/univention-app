@@ -1,0 +1,28 @@
+<p class="p1" style="Helvetica Neue&quot; color: rgb(0, 0, 0); font-family: &quot; font-size: 13px; font-stretch: normal; font-variant-east-asian: normal; font-variant-numeric: normal; line-height: normal; margin-bottom: 0px; margin-top: 0px;">
+	Willkommen bei der XWiki Dokumentation. Sie haben jetzt erfolgreich XWiki installiert und sind in der Lage, mit dem Administrator Konto einzuloggen, das Sie während der Installation gewählt haben (aber bitte bei der URL <i>?oidc.skipped=true</i> hinzufügen).
+	<br>
+	&nbsp;
+	<br>
+</p>
+<p class="p1" style="Helvetica Neue&quot; color: rgb(0, 0, 0); font-family: &quot; font-size: 13px; font-stretch: normal; font-variant-east-asian: normal; font-variant-numeric: normal; line-height: normal; margin-bottom: 0px; margin-top: 0px;">
+	Mit diesem lokalen Administrator Benutzer können Sie Administratorenrechte anderen Benutzern zuweisen oder andere Einstellungen vornehmen. Auch ist es wichtig zu wissen, dass Ihr Wiki am Anfang öffentlich lesbar ist. Sie können mehr über die Rechtezuweisung und wie man sein Wiki schützt in der&nbsp;<a href="https://www.xwiki.org/xwiki/bin/view/Documentation/AdminGuide/Access%20Rights/" target="_blank">gesonderte Dokumentationsseite (EN)</a> erfahren.
+	<br>
+	&nbsp;
+	<br>
+</p>
+<p class="p1" style="Helvetica Neue&quot; color: rgb(0, 0, 0); font-family: &quot; font-size: 13px; font-stretch: normal; font-variant-east-asian: normal; font-variant-numeric: normal; line-height: normal; margin-bottom: 0px; margin-top: 0px;">
+	Während des Anfangs Ihrer Verwendung von XWiki ist das&nbsp;<a href="https://www.xwiki.org/xwiki/bin/view/Documentation/UserGuide/GettingStarted/" target="_blank">Getting Started (EN)</a>&nbsp;der beste Platz, um über die Grundlagen zu erfahren. XWiki kann wie es ist verwendet werden, es kann auch durch die&nbsp;<a href="https://extensions.xwiki.org/xwiki/bin/view/Extension/App%20Within%20Minutes%20Application" target="_blank">Gestaltung eigener Apps (EN)</a>&nbsp;erweitert werden. Sie können auch existierende Applications installieren, indem Sie den Erweiterungen-Panel unter Wiki-Administrieren besuchen.
+	<br>
+	&nbsp;
+	<br>
+</p>
+<p class="p1" style="Helvetica Neue&quot; color: rgb(0, 0, 0); font-family: &quot; font-size: 13px; font-stretch: normal; font-variant-east-asian: normal; font-variant-numeric: normal; line-height: normal; margin-bottom: 0px; margin-top: 0px;">
+	Beachten Sie, dass Sie speziellen Code nicht schreiben sollten, die die XWiki Platform verändern, da es eine Aktualisierung erschweren könnte. Sie können mehr Informationen über Aktualisierungen in dieser <a href="https://www.xwiki.org/xwiki/bin/view/Documentation/UserGuide/Features/DistributionWizard" target="_blank">Dokumentation (EN)</a>&nbsp;lesen.
+	<br>
+</p>
+<p class="p1" style="Helvetica Neue&quot; color: rgb(0, 0, 0); font-family: &quot; font-size: 13px; font-stretch: normal; font-variant-east-asian: normal; font-variant-numeric: normal; line-height: normal; margin-bottom: 0px; margin-top: 0px;">
+	Wenn Sie Fragen über die Verwendung von XWiki haben, können Sie das <a href="https://forum.xwiki.org/" target="_blank">Gemeinschaftsforum (EN)</a>&nbsp;besuchen oder die Firma XWiki SAS für professionelle Dienste&nbsp;<a href="https://xwiki.com/en/company/contact-us/" target="_blank">kontaktieren</a>.
+</p>
+<p class="p2" style="Helvetica Neue&quot; color: rgb(0, 0, 0); font-family: &quot; font-size: 13px; font-stretch: normal; font-variant-east-asian: normal; font-variant-numeric: normal; line-height: normal; margin-bottom: 0px; margin-top: 0px; min-height: 15px;">
+	<br>
+</p>

@@ -1,0 +1,142 @@
+#!/bin/bash
+
+echo "$@"
+
+BASE_DIR='/var/lib/univention-appcenter/apps/xwiki'
+CONF_DIR="$BASE_DIR/data/xwiki-data/data"
+
+if [ "$1" = "install" ]; then
+    echo "Open Admin account for non-interactive tasks."
+    admin_password="$(pwgen -1 -n 32)"
+
+    file="$CONF_DIR/xwiki.cfg"
+    timeout=15
+    echo -n "Waiting for XWiki configuration being created "
+    while [ ! -f $file ]; do
+	    echo -n "."
+	    if [ "$timeout" == 0]; then
+		    echo ""
+		    echo "ERROR: Timeout while waiting for $file."
+		    exit 1
+	    fi
+
+	    sleep 1
+	    ((timeout--))
+    done
+    echo ""
+
+    sed -i "s/# xwiki.superadminpassword=system/xwiki.superadminpassword=$admin_password/" "$CONF_DIR/xwiki.cfg"
+    
+    echo "Restart XWiki for the password change have an effect."
+    univention-app restart xwiki
+    
+    echo "Install XWiki Extension OpenID Connect Authenticator"
+    filename_jobrequest="/tmp/jobrequest.xml"
+    
+    cat << EOF > "$filename_jobrequest"
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jobRequest xmlns="http://www.xwiki.org">
+  <id>
+    <element>extension</element>
+    <element>provision</element>
+    <element>796fb04f-b095-4db8-a3ec-fa03f22051f8</element>
+  </id>
+  <interactive>false</interactive>
+  <remote>false</remote>
+  <verbose>true</verbose>
+  <property>
+    <key>extensions</key>
+    <value>
+      <list xmlns="" xmlns:ns2="http://www.xwiki.org">
+        <org.xwiki.extension.ExtensionId>
+          <id>org.xwiki.contrib.oidc:oidc-authenticator</id>
+          <version class="org.xwiki.extension.version.internal.DefaultVersion" serialization="custom">
+            <org.xwiki.extension.version.internal.DefaultVersion>
+              <string>1.28</string>
+            </org.xwiki.extension.version.internal.DefaultVersion>
+          </version>
+        </org.xwiki.extension.ExtensionId>
+      </list>
+    </value>
+  </property>
+  <property>
+    <key>extensions.excluded</key>
+    <value>
+      <set xmlns="" xmlns:ns2="http://www.xwiki.org"/>
+    </value>
+  </property>
+  <property>
+    <key>interactive</key>
+    <value>
+      <boolean xmlns="" xmlns:ns2="http://www.xwiki.org">false</boolean>
+    </value>
+  </property>
+  <property>
+    <key>namespaces</key>
+    <value>
+      <list xmlns="" xmlns:ns2="http://www.xwiki.org">
+        <string>xwiki</string>
+      </list>
+    </value>
+  </property>
+</jobRequest>
+EOF
+
+    eval "$(univention-config-registry shell)"
+
+    curl_response_file="/tmp/c_response"    
+    http_status=$(curl -s -w %{http_code} -o $curl_response_file -i --user "superadmin:$admin_password" -X PUT -H "Content-Type: text/xml" "http://localhost:$appcenter_apps_xwiki_ports_8080/xwiki/rest/jobs?jobType=install&async=false" --upload-file $filename_jobrequest)
+
+    echo "Response from extension installer, HTTP $http_status: $(<$curl_response_file )"
+    rm $curl_response_file
+    rm $filename_jobrequest
+    
+    echo "Close Admin account for non-interactive tasks."
+    sed -i "s/xwiki.superadminpassword=$admin_password/# xwiki.superadminpassword=system/" "$CONF_DIR/xwiki.cfg"
+
+    # Make sure that the activation is only put into the file once
+    # It adds the new anyway, if there already is a comment and a valid line in there. I neglect that, because it is activated anyway
+    grep "xwiki.authentication.authclass=org.xwiki.contrib.oidc.auth.OIDCAuthServiceImpl" $CONF_DIR/xwiki.cfg 2>&1 1> /dev/null
+    rc_code=$?
+    # Skip adding the extenstion line if it is already present
+    if [ ${rc_code} -eq 1 ]; then
+            echo "Activate XWiki Extension OpenID Connect Authenticator"
+            echo "xwiki.authentication.authclass=org.xwiki.contrib.oidc.auth.OIDCAuthServiceImpl" >> "$CONF_DIR/xwiki.cfg"
+    elif [ ${rc_code} -eq 0 ]; then
+            grep "#[[:space:]]\+xwiki.authentication.authclass=org.xwiki.contrib.oidc.auth.OIDCAuthServiceImpl" $CONF_DIR/xwiki.cfg 2>&1 1> /dev/null
+            rc_code=$?
+            if [ ${rc_code} -eq 0 ] ; then
+                    echo "Activate XWiki Extension OpenID Connect Authenticator"
+                    sed -i "s/#[[:space:]]\+xwiki.authentication.authclass=org.xwiki.contrib.oidc.auth.OIDCAuthServiceImpl/xwiki.authentication.authclass=org.xwiki.contrib.oidc.auth.OIDCAuthServiceImpl/" "$CONF_DIR/xwiki.cfg"
+            fi
+    fi
+    
+    echo "Add OpenID Connect configuration to XWiki"
+    CLIENT_SECRET="$(pwgen -n 32 -1)"
+    
+    cat << EOF >> "$CONF_DIR/xwiki.properties"
+oidc.endpoint.authorization=https://$ucs_server_sso_fqdn/signin/v1/identifier/_/authorize
+oidc.endpoint.token=https://$ucs_server_sso_fqdn/konnect/v1/token
+oidc.endpoint.userinfo=https://$ucs_server_sso_fqdn/konnect/v1/userinfo
+oidc.endpoint.logout=https://$ucs_server_sso_fqdn/signin/v1/identifier/_/endsession
+oidc.scope=openid,profile,email
+oidc.idtokenclaims=id_token
+oidc.user.nameFormater=\${oidc.user.preferredUsername._clean}
+oidc.userinfoclaims=
+oidc.clientid=xwiki
+oidc.secret=$CLIENT_SECRET
+EOF
+
+
+fi # end tasks during installation
+
+
+## Always execute the tasks below with every run of the script.
+
+# IMPORTANT: This step has to be made every time the container is replaced by a new one
+echo "Make UCS certificate known to XWiki."
+univention-app update-certificates xwiki
+univention-app shell xwiki keytool -import -noprompt -trustcacerts -alias "Univention" -file /usr/local/share/ca-certificates/ucs.crt -keystore /opt/java/openjdk/lib/security/cacerts -storepass changeit
+
+echo "Restart XWiki for certificate changes come into effect."
+univention-app restart xwiki

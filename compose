@@ -1,0 +1,34 @@
+version: '3'
+services:
+  web:
+    # Image was: xwiki:13.4.3-mysql-tomcat
+    image: "docker.software-univention.de/xwiki-web:13.4.3"
+    container_name: xwiki-web
+    depends_on:
+      - db
+#      - index
+    ports:
+      - 8080:8080
+    environment:
+      - XWIKI_VERSION=xwiki
+      - DB_USER=xwiki
+      - DB_PASSWORD=xwiki
+      - DB_DATABASE=xwiki
+      - DB_HOST=xwiki-mysql-db
+      - CONTEXT_PATH=/xwiki/
+#      - INDEX_HOST=xwiki-index
+    volumes:
+      - /var/lib/univention-appcenter/apps/xwiki/data/xwiki-data:/usr/local/xwiki
+  db:
+    # Image was: mysql:5.7.35
+    image: "docker.software-univention.de/xwiki-db:13.4.3"
+    container_name: xwiki-mysql-db
+    volumes:
+      - /var/lib/univention-appcenter/apps/xwiki/conf/xwiki/xwiki.cnf:/etc/mysql/conf.d/xwiki.cnf
+      - /var/lib/univention-appcenter/apps/xwiki/data/mysql-data:/var/lib/mysql
+      - /var/lib/univention-appcenter/apps/xwiki/conf/xwiki/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - MYSQL_ROOT_PASSWORD=xwiki
+      - MYSQL_USER=xwiki
+      - MYSQL_PASSWORD=xwiki
+      - MYSQL_DATABASE=xwiki

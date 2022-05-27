@@ -1,0 +1,24 @@
+<p class="p1" style="Helvetica Neue&quot; color: rgb(0, 0, 0); font-family: &quot; font-size: 13px; font-stretch: normal; font-variant-east-asian: normal; font-variant-numeric: normal; line-height: normal; margin-bottom: 0px; margin-top: 0px;">
+	Welcome to the XWiki documentation section. Now that you have successfully installed XWiki, you will be able to log in with the admin user you created during the installation (please add <i>?oidc.skipped=true</i>&nbsp;to the login URL).
+</p>
+<p class="p1" style="Helvetica Neue&quot; color: rgb(0, 0, 0); font-family: &quot; font-size: 13px; font-stretch: normal; font-variant-east-asian: normal; font-variant-numeric: normal; line-height: normal; margin-bottom: 0px; margin-top: 0px;">
+	Using this local user you may then grant admin rights to other users. By default your wiki is public. You can learn more about granting access rights and making your wiki private from the&nbsp;<a href="https://www.xwiki.org/xwiki/bin/view/Documentation/AdminGuide/Access%20Rights/" target="_blank">dedicated documentation page</a>.
+</p>
+<p class="p2" style="Helvetica Neue&quot; color: rgb(0, 0, 0); font-family: &quot; font-size: 13px; font-stretch: normal; font-variant-east-asian: normal; font-variant-numeric: normal; line-height: normal; margin-bottom: 0px; margin-top: 0px; min-height: 15px;">
+	<br>
+</p>
+<p class="p1" style="Helvetica Neue&quot; color: rgb(0, 0, 0); font-family: &quot; font-size: 13px; font-stretch: normal; font-variant-east-asian: normal; font-variant-numeric: normal; line-height: normal; margin-bottom: 0px; margin-top: 0px;">
+	As you start using XWiki, the&nbsp;<a href="https://www.xwiki.org/xwiki/bin/view/Documentation/UserGuide/GettingStarted/" target="_blank">Getting Started guide</a>&nbsp;is the place to learn the basics. XWiki may be used as is, or extended by&nbsp;<a href="https://extensions.xwiki.org/xwiki/bin/view/Extension/App%20Within%20Minutes%20Application" target="_blank">creating your own apps</a>.&nbsp;You may choose to install existing&nbsp;<a href="https://store.xwiki.com/" target="_blank">applications</a>&nbsp;by going to the Extension Manager in the XWiki Administration.
+</p>
+<p class="p2" style="Helvetica Neue&quot; color: rgb(0, 0, 0); font-family: &quot; font-size: 13px; font-stretch: normal; font-variant-east-asian: normal; font-variant-numeric: normal; line-height: normal; margin-bottom: 0px; margin-top: 0px; min-height: 15px;">
+	<br>
+</p>
+<p class="p1" style="Helvetica Neue&quot; color: rgb(0, 0, 0); font-family: &quot; font-size: 13px; font-stretch: normal; font-variant-east-asian: normal; font-variant-numeric: normal; line-height: normal; margin-bottom: 0px; margin-top: 0px;">
+	Please note, you should not write custom code on top of the XWiki Platform, since this will negatively impact on your ability to upgrade. To learn more about upgrades, please check out the&nbsp;<a href="https://www.xwiki.org/xwiki/bin/view/Documentation/UserGuide/Features/DistributionWizard#HUpgrade" target="_blank">documentation</a>.
+</p>
+<p class="p2" style="Helvetica Neue&quot; color: rgb(0, 0, 0); font-family: &quot; font-size: 13px; font-stretch: normal; font-variant-east-asian: normal; font-variant-numeric: normal; line-height: normal; margin-bottom: 0px; margin-top: 0px; min-height: 15px;">
+	<br>
+</p>
+<p class="p1" style="Helvetica Neue&quot; color: rgb(0, 0, 0); font-family: &quot; font-size: 13px; font-stretch: normal; font-variant-east-asian: normal; font-variant-numeric: normal; line-height: normal; margin-bottom: 0px; margin-top: 0px;">
+	If you have any questions about using XWiki, you may visit the&nbsp;<a href="https://forum.xwiki.org/" target="_blank">community forum</a>&nbsp;or&nbsp;<a href="https://xwiki.com/en/company/contact-us/" target="_blank">get in touch with XWiki SAS</a>&nbsp;for professional assistance.
+</p>

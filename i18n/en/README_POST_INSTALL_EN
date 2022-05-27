@@ -1,0 +1,8 @@
+<p class="p1" style="Helvetica Neue&quot; color: rgb(0, 0, 0); font-family: &quot; font-size: 13px; font-stretch: normal; font-variant-east-asian: normal; font-variant-numeric: normal; line-height: normal; margin-bottom: 0px; margin-top: 0px;">
+	Thank you for installing XWiki! You can now log in with the admin user you created during the installation (please add <i>?oidc.skipped=true</i> to the login URL). Using this local user you can give admin rights to other users. By default your wiki is public.
+</p>
+<p class="p1" style="Helvetica Neue&quot; color: rgb(0, 0, 0); font-family: &quot; font-size: 13px; font-stretch: normal; font-variant-east-asian: normal; font-variant-numeric: normal; line-height: normal; margin-bottom: 0px; margin-top: 0px;">
+	You can learn more about granting access rights and making your wiki private from&nbsp;the&nbsp;<a href="https://www.xwiki.org/xwiki/bin/view/Documentation/AdminGuide/Access%20Rights/" target="_blank">dedicated documentation page</a>.
+	<br>
+	Enjoy your new wiki!&nbsp;
+</p>
