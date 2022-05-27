@@ -39,7 +39,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 app_name=xwiki
-app_version=13.4.3-fix
+app_version=13.10.6
 app_upgrade_from=13.4.3
 
 ucs_version=4.4

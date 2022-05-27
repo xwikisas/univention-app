@@ -1,9 +1,9 @@
 version: '3'
 services:
   web:
-    # Image was: xwiki:13.4.3-mysql-tomcat
-    # Image was: docker.software-univention.de/xwiki-web:13.4.3
-    image: "docker.software-univention.de/xwiki-web:13.4.3-fix1"
+    # Image was: xwiki:13.10.6-mysql-tomcat
+    # Image was: docker.software-univention.de/xwiki-web:13.10.6
+    image: xwiki:13.10.6-mysql-tomcat
     container_name: xwiki-web
     depends_on:
       - db
@@ -21,9 +21,9 @@ services:
     volumes:
       - /var/lib/univention-appcenter/apps/xwiki/data/xwiki-data:/usr/local/xwiki
   db:
-    # Image was: mysql:5.7.35
-    # Image was: docker.software-univention.de/xwiki-db:13.4.3
-    image: "docker.software-univention.de/xwiki-db:13.4.3-fix1"
+    # Image was: mysql:5.7.37
+    # Image was: docker.software-univention.de/xwiki-db:13.10.6
+    image: mysql:5.7.37
     container_name: xwiki-mysql-db
     volumes:
       - /var/lib/univention-appcenter/apps/xwiki/conf/xwiki/xwiki.cnf:/etc/mysql/conf.d/xwiki.cnf

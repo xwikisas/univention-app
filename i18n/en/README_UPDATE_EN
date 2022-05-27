@@ -1,5 +1,5 @@
-This update provides no changes compared to a working installed version 13.4.3. It only fixes the installation process.
+This update provides the new LTS version of XWiki, 13.10.6.
 <br>
-&nbsp;
+After update you will need to follow the update steps in the XWiki Distribution Wizard as described in <a href="https://www.xwiki.org/xwiki/bin/view/Documentation/UserGuide/Features/DistributionWizard#HUpgrade" target="_blank">This documentation</a>.
 <br>
-This documentation&nbsp;may be helpful as you update XWiki to a recent version.
+More information about this version in the <a href="https://www.xwiki.org/xwiki/bin/view/ReleaseNotes/Data/XWiki/13.10.6/" target="_blank">XWiki Release Notes</a>.

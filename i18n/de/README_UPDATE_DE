@@ -1,3 +1,7 @@
 <p class="p1" style="Helvetica Neue&quot; color: rgb(0, 0, 0); font-family: &quot; font-size: 13px; font-stretch: normal; font-variant-east-asian: normal; font-variant-numeric: normal; line-height: normal; margin-bottom: 0px; margin-top: 0px;">
-	<a href="https://www.xwiki.org/xwiki/bin/view/Documentation/UserGuide/Features/DistributionWizard#HUpgrade" style="font-family: Roboto, sans-serif; font-size: 14px;" target="_blank">Diese Dokumentationsseite (EN)</a>&nbsp;konnte hilfreich sein, wenn Sie ihre Wiki aktualisieren.
+Dieses Update stellt die neue LTS-Version von XWiki, 13.10.6, bereit.
+<br>
+Nach dem Update müssen Sie den Update-Schritten im XWiki Distribution Wizard folgen, wie in <a href="https://www.xwiki.org/xwiki/bin/view/Documentation/UserGuide/Features/DistributionWizard#HUpgrade" target="_blank">dieser Dokumentation</a>&nbsp;beschrieben.
+<br>
+Sie werden finding weitere Informationen zu dieser Version in den <a href="https://www.xwiki.org/xwiki/bin/view/ReleaseNotes/Data/XWiki/13.10.6/" target="_blank">XWiki Release Notes</a>.
 </p>

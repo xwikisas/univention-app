@@ -1,4 +1,7 @@
-<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="Translation" dir="ltr" id="tw-target-text" style="text-align:left;">
-<span class="Y2IQFc" lang="de">Dieses Update bietet keine Änderungen gegenüber einer funktionierenden installierten Version 13.4.3. Es behebt nur den Installationsvorgang.</span>
-</pre>
-Danke, dass Sie XWiki aktualisiert haben! Sie können&nbsp;&nbsp;<a href="https://www.xwiki.org/xwiki/bin/view/ReleaseNotes/" target="_blank">Veröffentlichungshinweise (EN)</a>&nbsp;lesen.
+<p class="p1" style="Helvetica Neue&quot; color: rgb(0, 0, 0); font-family: &quot; font-size: 13px; font-stretch: normal; font-variant-east-asian: normal; font-variant-numeric: normal; line-height: normal; margin-bottom: 0px; margin-top: 0px;">
+Danke, dass Sie XWiki zu Version 13.10.6 aktualisiert haben! 
+<br>
+Um das Update abzuschließen müssen Sie den Update-Schritten im XWiki Distribution Wizard folgen, wie in <a href="https://www.xwiki.org/xwiki/bin/view/Documentation/UserGuide/Features/DistributionWizard#HUpgrade" target="_blank">dieser Dokumentation</a>&nbsp;beschrieben.
+<br>
+Sie werden finding weitere Informationen zu dieser Version in den <a href="https://www.xwiki.org/xwiki/bin/view/ReleaseNotes/Data/XWiki/13.10.6/" target="_blank">XWiki Release Notes</a>.
+</p>
